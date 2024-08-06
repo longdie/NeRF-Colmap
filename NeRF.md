@@ -24,7 +24,7 @@ COLMAP 和 NeRF 可以互补使用。COLMAP 可以先从多视角图像中构建
 
 首先，启动 COLMAP 的图形用户界面。COLMAP 提供了一个自动重建工具，该工具只需一个输入图像的文件夹，就可以在工作区文件夹中生成**稀疏和稠密重建**。点击界面中的 Reconstruction（重建） > Automatic Reconstruction（自动重建），并指定相关选项。输出结果将写入到工作区文件夹中。例如，如果你的图像位于 path/to/project/images 目录下，你可以选择 path/to/project 作为工作区文件夹，运行自动重建工具后，该文件夹的结构可能类似于以下内容：
 
-![](C:\Users\董子能\AppData\Roaming\marktext\images\2024-08-05-14-22-55-image.png)
+![image](https://github.com/user-attachments/assets/df519145-b721-4cd3-8671-a3794428f752)
 
 在这里，path/to/project/sparse 文件夹包含了所有重建组件的稀疏模型，而 path/to/project/dense 文件夹包含了它们对应的稠密模型。稠密点云文件 fused.ply 可以通过 COLMAP 中的 File（文件） > Import model from ...（从...导入模型）导入，而稠密网格模型则需要使用诸如 Meshlab 的外部查看器进行可视化。
 ![image](https://github.com/user-attachments/assets/5664d95e-6eaf-4476-9899-dde98308d6ec)
@@ -72,11 +72,11 @@ COLMAP 的大多数功能都可以通过图形界面和命令行界面访问，�
 
 假设以以下结构存储了项目的图像：
 
-![](C:\Users\董子能\AppData\Roaming\marktext\images\2024-08-06-09-42-23-image.png)
+![image](https://github.com/user-attachments/assets/21c9c0d8-454c-4b02-bfb4-ec0ed71c01bf)
 
 自动重建工具的命令为：
 
-![](C:\Users\董子能\AppData\Roaming\marktext\images\2024-08-06-09-42-53-image.png)
+![image](https://github.com/user-attachments/assets/9942609a-bd16-4fb4-aee2-221812e032bf)
 
 ### 细节
 
@@ -86,7 +86,8 @@ COLMAP 假设所有输入图像都位于一个输入目录中，并且可能包�
 
 第一步是通过运行预构建的二进制文件启动 COLMAP 的图形用户界面（Windows: COLMAP.bat，Mac: COLMAP.app）或通过在 CMake 构建文件夹中执行 ./src/colmap/exe/colmap gui。接下来，通过选择 File（文件） > New project（新建项目）创建一个新项目。在此对话框中，您必须选择存储数据库的位置和包含输入图像的文件夹。为了方便，您可以通过选择 File（文件） > Save project（保存项目）将整个项目设置保存到配置文件中。项目配置存储了数据库和图像文件夹的绝对路径信息以及其他参数设置。如果您决定移动数据库或图像文件夹，必须通过创建新项目相应地更改路径。或者，可以在您选择的文本编辑器中直接修改生成的 .ini 配置文件。要重新打开现有项目，只需选择 File（文件） > Open project（打开项目），打开配置文件，所有参数设置将被恢复。请注意，所有 COLMAP 可执行文件都可以从命令行启动，可以通过命令行参数指定单独设置，或者提供项目配置文件的路径（请参阅界面）。
 
-![](C:\Users\董子能\AppData\Roaming\marktext\images\2024-08-05-16-10-02-image.png)
+![image](https://github.com/user-attachments/assets/90b9d6ae-123f-4629-a899-2db32625dadf)
+
 
 #### 特征检测和提取
 
@@ -96,11 +97,11 @@ COLMAP 假设所有输入图像都位于一个输入目录中，并且可能包�
 
 您可以从图像中检测和提取新特征，或从文本文件中导入现有特征。COLMAP 在GPU或CPU上提取SIFT [lowe04] 特征。GPU版本需要连接显示器，而CPU版本推荐在服务器上使用。一般而言，GPU版本更优，因为它具有定制的特征检测模式，在高对比度图像的情况下通常会产生更高质量的特征。如果导入现有特征，每个图像旁边必须有一个文本文件（例如，/path/to/image1.jpg 和 /path/to/image1.jpg.txt），格式如下：
 
-![](C:\Users\董子能\AppData\Roaming\marktext\images\2024-08-05-21-58-16-image.png)
+![image](https://github.com/user-attachments/assets/73d7d4ea-da91-429f-8bf0-5b39e39f2f9d)
 
 其中 X、Y、SCALE、ORIENTATION 是浮点数，D_1...D_128 范围内的值 0...255. 该文件应有 NUM_FEATURES行 每个功能一行。例如，如果图像有 4 个特征，则文本 文件应如下所示：
 
-![](C:\Users\董子能\AppData\Roaming\marktext\images\2024-08-05-21-58-32-image.png)
+![image](https://github.com/user-attachments/assets/fee56eef-6973-49be-8daf-a6c196a76485)
 
 请注意，根据惯例，图像的左上角坐标为 (0, 0)，最左上角像素的中心坐标为 (0.5, 0.5)。如果需要为大量图像集合导入特征，直接使用您喜欢的脚本语言访问数据库效率会更高（请参阅数据库格式）。
 
