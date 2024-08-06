@@ -27,6 +27,8 @@ COLMAP 和 NeRF 可以互补使用。COLMAP 可以先从多视角图像中构建
 ![](C:\Users\董子能\AppData\Roaming\marktext\images\2024-08-05-14-22-55-image.png)
 
 在这里，path/to/project/sparse 文件夹包含了所有重建组件的稀疏模型，而 path/to/project/dense 文件夹包含了它们对应的稠密模型。稠密点云文件 fused.ply 可以通过 COLMAP 中的 File（文件） > Import model from ...（从...导入模型）导入，而稠密网格模型则需要使用诸如 Meshlab 的外部查看器进行可视化。
+![image](https://github.com/user-attachments/assets/5664d95e-6eaf-4476-9899-dde98308d6ec)
+
 
 ### 数据
 
