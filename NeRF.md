@@ -24,7 +24,7 @@ COLMAP 和 NeRF 可以互补使用。COLMAP 可以先从多视角图像中构建
 
 首先，启动 COLMAP 的图形用户界面。COLMAP 提供了一个自动重建工具，该工具只需一个输入图像的文件夹，就可以在工作区文件夹中生成**稀疏和稠密重建**。点击界面中的 Reconstruction（重建） > Automatic Reconstruction（自动重建），并指定相关选项。输出结果将写入到工作区文件夹中。例如，如果你的图像位于 path/to/project/images 目录下，你可以选择 path/to/project 作为工作区文件夹，运行自动重建工具后，该文件夹的结构可能类似于以下内容：
 
-![image](C:\Users\董子能\AppData\Roaming\marktext\images\2024-08-05-14-22-55-image.png)
+![](C:\Users\董子能\AppData\Roaming\marktext\images\2024-08-05-14-22-55-image.png)
 
 在这里，path/to/project/sparse 文件夹包含了所有重建组件的稀疏模型，而 path/to/project/dense 文件夹包含了它们对应的稠密模型。稠密点云文件 fused.ply 可以通过 COLMAP 中的 File（文件） > Import model from ...（从...导入模型）导入，而稠密网格模型则需要使用诸如 Meshlab 的外部查看器进行可视化。
 ![image](https://github.com/user-attachments/assets/5664d95e-6eaf-4476-9899-dde98308d6ec)
