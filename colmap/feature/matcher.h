@@ -1,3 +1,5 @@
+// // Copyright (c) 2023, ETH Zurich and UNC Chapel Hill.
+// All rights reserved.
 // 引用自https://github.com/colmap/colmap/tree/main/src/colmap/feature
 
 // 这段代码包含了两个主要部分：FeatureMatcher类和FeatureMatcherCache类
