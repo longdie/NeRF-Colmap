@@ -1,3 +1,5 @@
+// Copyright (c) 2023, ETH Zurich and UNC Chapel Hill.
+// All rights reserved.
 // 引用自https://github.com/colmap/colmap/blob/main/src/colmap/feature/matcher.cc
 // 这段代码实现了一个特征匹配缓存(FeatureMatcherCache)的类，用于优化图像特征数据的存取效率。
 // 这个类通过缓存相机、图像、关键点、描述符、位姿先验等信息，减少多次从数据库读取相同数据的开销。
