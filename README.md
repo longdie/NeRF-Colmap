@@ -1,6 +1,6 @@
 # NeRF & Colmap
-本项目是利用 Colmap 增强 NeRF 的实验。
+这是一个研究基于NeRF和Colmap进行三维重建的项目。
 
 NeRF.md 里面是对实验流程的整体介绍。
 
-colmap 文件夹里面是对 colmap 项目代码的部分解释。
+colmap 文件夹包含运行colmap的脚本文件和对 colmap 项目部分代码的注释。
