@@ -1,4 +1,4 @@
-# NeRF
+# Colmap2NeRF
 
 ## 介绍
 
