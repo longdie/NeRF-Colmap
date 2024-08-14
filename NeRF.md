@@ -17,6 +17,7 @@ COLMAP 和 NeRF 可以互补使用。COLMAP 可以先从多视角图像中构建
 1. 数据：一组多视图2D图像放在同一个文件夹
 2. 先把图像在colmap跑出来（利用图形界面 or bash文件）
 3. 跑 colmap2nerf.py. 命令： python ../../../project/colmap2nerf.py  --colmap_matcher exhaustive --run_colmap --aabb_scale 32
+4. 利用得到的相机参数跑Nerf
 
 ## Colmap
 
