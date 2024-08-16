@@ -6,7 +6,7 @@
 
 NeRF在干一件什么事： 输入一系列的已知视角，优化NeRF来表示连续场景，最后渲染出该场景的新视角。
 
-![](D:\Program\3D\NeRF\images\1.png)
+![1](https://github.com/user-attachments/assets/e97036ad-1098-4013-be39-025b569cd010)
 
 用一句话说，**NeRF是一种使用神经网络来隐式表达3D场景的技术**。
 
@@ -18,7 +18,7 @@ NeRF的公式表达：$F_{\theta }:(\vec{x} ,\vec{d}) \to (\vec{c}, \sigma )$
 
 所以NeRF简单说就是利用样本数据训练好神经网络 $\theta$ ，然后就可以获得任意视角的2d视图，也就得到了完整的3d场景。 
 
-![](D:\Program\3D\NeRF\images\2.png)
+![2](https://github.com/user-attachments/assets/52d79678-f3ba-47dc-9bdf-86561b430037)
 
 （Rendering Loss：渲染损失）
 
@@ -26,7 +26,7 @@ NeRF是5D输入$(x,y, z, \theta, \phi)$ 和 4D输出$(r, g, b, \sigma)$
 
 其中$(\theta, \phi)$ 代表相机射线的观测方向，下图可以解释。
 
-<img src="file:///D:/Program/3D/NeRF/images/3.png" title="" alt="" width="453">
+![3](https://github.com/user-attachments/assets/7c0c101d-fe09-4f97-98df-3ae6cf0850c5)
 
 对于2D图像表示，我们只需要明确像素位置，即可找到对应的颜色值。
 
@@ -77,7 +77,7 @@ NeRF采用了一种层次化表示来提升渲染效率。具体做法是：**�
 
 位置编码是NeRF中的重要创新点之一，加入位置编码使得NeRF对于新视点重建的效果大大提升。
 
-![](D:\Program\3D\NeRF\images\4.png)
+![4](https://github.com/user-attachments/assets/679eff3d-026d-4c7e-b172-04f82bec7f63)
 
 具体效果我们可以看上图。其大概原理是，尽量使相邻位置的输出结果不要相似。每个位置输入$x$ ，经过位置编码以后，与相邻位置具有较大差异。
 NeRF中直接采用频率变换来做位置编码，为的是**避免空间相邻采样点在MLP表示中的过平滑问题**。
